@@ -1,0 +1,14 @@
+<div id="header"></div>
+<div id="welcomeMessage">
+  <h1>Hello Patrick!</h1>
+  <h2>{{todayDate| date: 'EEEE'}}</h2>
+  <h2>{{todayDate | date : 'yyyy-MM-dd'}}</h2>
+  <h2>{{todayDate | date : 'HH:mm'}}</h2>
+</div>
+
+
+<div id="grid-container">
+    <router-outlet>
+      <app-navigation></app-navigation>
+    </router-outlet>
+</div>

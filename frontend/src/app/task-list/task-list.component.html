@@ -1,0 +1,11 @@
+<div class="main">
+    <h1>Task List</h1>
+    <div id="task" *ngFor="let task of tasks">
+        <a [routerLink] = "['/tasks/'+task.id]">
+            <h2>{{task.task}}</h2>
+            <h3>Deadline: 2019-12-01</h3>
+            <h4>Status: almost done</h4>
+        </a>
+    </div>
+</div>
+
