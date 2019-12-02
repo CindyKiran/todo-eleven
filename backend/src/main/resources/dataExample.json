@@ -1,0 +1,65 @@
+[
+  {
+    "id": 1,
+    "task": "Create backend and connect to database",
+    "description": "Create Spring Boot app and Task object with the properties: id, name, description, deadline, status and priority.\nConnect it to Mysql database.",
+    "published": null,
+    "deadline": "2019-11-29T00:00:00.000+0000",
+    "priority": 5,
+    "status": "Done"
+  },
+  {
+    "id": 2,
+    "task": "Create frontend with Angular",
+    "description": "Create webpage with main screen displaying all the tasks. Create also basic pages for displaying one task and its details, a form to submit new task, and a form to submit changes.",
+    "published": null,
+    "deadline": "2019-12-02T00:00:00.000+0000",
+    "priority": 5,
+    "status": "Done"
+  },
+  {
+    "id": 4,
+    "task": "Connect backend to frontend",
+    "description": "Connect Spring Boot, which is connect to MySql database, to Angular project.\nCreate CRUD repository and taskServices.\nCheck if http request goes smoothly.\n",
+    "published": null,
+    "deadline": "2019-12-01T00:00:00.000+0000",
+    "priority": 5,
+    "status": "Problems with undefined task"
+  },
+  {
+    "id": 5,
+    "task": "Fix bug on Put-request",
+    "description": "Done: getTasks, getTask, and addTask.\nPut-request created a new Task instead of replacing it; found problem in frontend TaskService, was sending new body.\n",
+    "published": null,
+    "deadline": "2019-12-02T00:00:00.000+0000",
+    "priority": 4,
+    "status": "Bug fixed"
+  },
+  {
+    "id": 6,
+    "task": "Add feature: sort task by priority or date",
+    "description": "Already shows list of all created tasks, now want to give the option to sort it on deadline, priority or status. ",
+    "published": null,
+    "deadline": "2019-12-03T00:00:00.000+0000",
+    "priority": 3,
+    "status": "Not started yet"
+  },
+  {
+    "id": 7,
+    "task": "Deploy app on server",
+    "description": "First check if you can deploy it on your webhost server; or else ask Patrick.\n",
+    "published": null,
+    "deadline": "2019-12-03T00:00:00.000+0000",
+    "priority": 5,
+    "status": "Have not started yet"
+  },
+  {
+    "id": 8,
+    "task": "Write user and tech documentation",
+    "description": "Ask Patrick about it's requirements.\n",
+    "published": null,
+    "deadline": "2019-12-03T00:00:00.000+0000",
+    "priority": 5,
+    "status": "Have not started yet"
+  }
+]

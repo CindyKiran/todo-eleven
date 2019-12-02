@@ -3,7 +3,7 @@
     <div id="task" *ngFor="let task of tasks">
         <a [routerLink] = "['/tasks/'+task.id]">
             <h2>{{task.task}}</h2>
-            <h3>Deadline: {{task.deadline}}</h3>
+            <h3>Deadline: {{task.deadline | date : 'yyyy-MM-dd'}}</h3>
             <h4>Status: {{task.status}}</h4>
         </a>
     </div>

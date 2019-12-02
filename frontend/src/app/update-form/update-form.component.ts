@@ -14,31 +14,41 @@ export class UpdateFormComponent implements OnInit {
   taskForm: FormGroup;
   validMessage = ''; //message that will hold error info
 
-  constructor(private taskService:TaskService, private route: ActivatedRoute) { }
+  constructor(private taskService:TaskService, private route: ActivatedRoute, private formBuilder:FormBuilder) { }
 
   ngOnInit() {
-    this.getTask(this.route.snapshot.params.id);
+    this.getTaskAndFillIn(this.route.snapshot.params.id);
 
-    this.taskForm = new FormGroup({
-      task: new FormControl('', Validators.required),
-      description: new FormControl('', Validators.required),
-      deadline: new FormControl('', Validators.required),
-      priority: new FormControl('', Validators.required),
-      status: new FormControl('', Validators.required)
-    });
+    // this.taskForm = new FormGroup({
+    //   task: new FormControl('', Validators.required),
+    //   description: new FormControl('', Validators.required),
+    //   deadline: new FormControl('', Validators.required),
+    //   priority: new FormControl('', Validators.required),
+    //   status: new FormControl('', Validators.required)
+    // });
+
   }
 
-  getTask(id: number){
+  getTaskAndFillIn(id: number){
     this.taskService.getTask(id).subscribe(
-      data => { this.task = data },
+      data => { 
+        this.task = data;
+        this.taskForm = this.formBuilder.group({
+          priority: [data["priority"], [Validators.required]],
+          task: [data["task"], [Validators.required]],
+          description: [data["description"], [Validators.required]],
+          status: [data["status"], [Validators.required]],
+          deadline: [data["deadline"], [Validators.required]]
+        });
+      },
       err => console.log(err)
     );
   }
 
   resubmitTask(){
     if(this.taskForm.valid){
-      this.validMessage = "Item succesfully added to inventory";
-      this.taskService.addTask(this.taskForm.value).subscribe(
+      this.validMessage = "Task successfully updated";
+      this.taskService.updateTask(this.route.snapshot.params.id, this.taskForm.value).subscribe(
         data => {
           this.taskForm.reset();
           return true;

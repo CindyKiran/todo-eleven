@@ -1,16 +1,22 @@
 /* You can add global styles to this file, and also import other style files */
 $secundairColor: #f4f4f4;
+$fontColor: #6d6d6d;
 
 body{
     margin:0;
     font-family: 'Dosis', sans-serif;
     background-color: $secundairColor;
+    color: $fontColor;
 }
 
 h1{ text-align: center;}
 
+a {
+    color: $fontColor;
+    text-decoration: none;
+}
 
-#grid-container{
+#grid-container {
     display: grid;
     grid-template-columns: 20% 80%;
 }
@@ -30,9 +36,11 @@ h1{ text-align: center;}
     background: linear-gradient(263deg, #6e8efb, #ea76ff);
     text-align: center;
     padding: 12px;
-    width: 115px;
+    width: 120px;
     font-weight: bold;
     display: inline-block;
+    margin: auto;
+    margin-left: 10px;
 }
 
 
@@ -47,4 +55,33 @@ h1{ text-align: center;}
     h2, h3, h4 { margin: 0 }
     h3, h4, p { text-align: left;}
 
+}
+
+input, textarea {
+    border-radius: 25px;
+    border: none;
+    padding: 11px;
+    width: 50%;
+    margin: 15px;
+    background: #e4f3f6;
+    font-size: large;
+    font-weight: bold;
+    color: $fontColor;
+}
+
+form{
+    background: white;
+    border-radius: 25px;
+    padding-top: 30px;
+    padding-bottom: 20px;
+    margin-bottom: 40px;
+}
+
+label{
+    display: block;
+    font-size: large;
+    font-weight: bold;
+    text-align: left;
+    margin-left: 24%;
+    margin-top: 20px;
 }

@@ -5,12 +5,16 @@
             <h3 class="validationError">{{validMessage}}</h3>
         </div>
 
-        <input type="text"  formControlName="task"          value="test"/>
-        <input type="text" formControlName="description"    value="{{task.description}}"/>
-        <input type="date" formControlName="deadline"       value="{{task.deadline}}"/>
+        <input type="text"  formControlName="task"          value="{{task.task}}"/>
+        <textarea  rows="10" formControlName="description">{{task.description}}</textarea>
+        <label>When is the deadline?</label>
+        <input type="date" formControlName="deadline"       value="{{task.deadline | date : 'yyyy-MM-dd'}}"/>
         <input type="text"  formControlName="priority"      value="{{task.priority}}"/>
-        <input type="text"  formControlName="status"        value="{{task.status}}"/>
-    <br>
+        <input type="text"  formControlName="status"        value="{{task.status}}"/><br>
+
+        <a href="" (click)="goBack()">
+                <div id="button">Back</div>
+        </a>
         <div id="button" (click)="resubmitTask()">Submit</div>
     </form>
 </div>

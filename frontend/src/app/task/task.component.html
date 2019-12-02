@@ -1,9 +1,15 @@
 <div class="main">
     <div id="task" style="margin-top:40px">
         <h1>{{task.task}}</h1>
-        <h3>Deadline: {{task.deadline}}</h3>
+        <h3>Deadline: {{task.deadline | date : 'yyyy-MM-dd'}}</h3>
         <h4>Status: {{task.status}}</h4>
         <p>{{task.description}}</p>
-        <div id="button" [routerLink]= "['/update-form/'+task.id]">Edit</div>
+
+        <a href="" (click)="goBack()">
+                <div id="button">Back</div>
+        </a>
+        <a [routerLink]= "['/update-form/'+task.id]">
+            <div id="button">Edit</div>
+        </a>
     </div>
 </div>

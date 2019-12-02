@@ -24,7 +24,7 @@ export class TaskService {
     return this.http.get('/server/tasks');
   }
 
-  updateTask(id: number, task){
+  updateTask(id: number, task: any){
     let body = JSON.stringify(task);
     return this.http.put('/server/tasks/'+id, task, httpOption );
   }

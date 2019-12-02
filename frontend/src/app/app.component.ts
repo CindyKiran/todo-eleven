@@ -9,4 +9,8 @@ export class AppComponent {
   title = 'frontend';
 
   todayDate = new Date();
+
+  goBack(){
+    window.history.back();
+  }
 }

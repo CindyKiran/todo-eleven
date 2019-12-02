@@ -27,7 +27,7 @@ export class FormComponent implements OnInit {
 
   submitTask(){
     if(this.taskForm.valid){
-      this.validMessage = "Item succesfully added to inventory";
+      this.validMessage = "Task successfully updated";
       this.taskService.addTask(this.taskForm.value).subscribe(
         data => {
           this.taskForm.reset();

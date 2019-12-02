@@ -1,5 +1,5 @@
 <div class="main">
-    <h1>Add item to inventory</h1>
+    <h1>Create New Task</h1>
     <form [formGroup]="taskForm">
         <div *ngIf="validMessage != ''">
             <h3 class="validationError">{{validMessage}}</h3>
@@ -7,10 +7,15 @@
 
         <input type="text"  formControlName="task"          placeholder="Task name"  required autofocus/>
         <input type="text" formControlName="description"    placeholder="Description"  required/>
+        <label>When is the deadline?</label>
         <input type="date" formControlName="deadline"       placeholder="Deadline" required/>
         <input type="text"  formControlName="priority"         placeholder="Priority" required/>
-        <input type="text"  formControlName="status"         placeholder="Status" required/>
+        <input type="text"  formControlName="status"         placeholder="Status" required/><br>
         
+        <a href="" (click)="goBack()">
+                <div id="button">Back</div>
+        </a>
         <div id="button" (click)="submitTask()">Submit</div>
+        
     </form>
 </div>
