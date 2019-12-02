@@ -1,0 +1,16 @@
+<div class="main">
+    <h1>{{task.task}}</h1>
+    <form [formGroup]="taskForm">
+        <div *ngIf="validMessage != ''">
+            <h3 class="validationError">{{validMessage}}</h3>
+        </div>
+
+        <input type="text"  formControlName="task"          value="test"/>
+        <input type="text" formControlName="description"    value="{{task.description}}"/>
+        <input type="date" formControlName="deadline"       value="{{task.deadline}}"/>
+        <input type="text"  formControlName="priority"      value="{{task.priority}}"/>
+        <input type="text"  formControlName="status"        value="{{task.status}}"/>
+    <br>
+        <div id="button" (click)="resubmitTask()">Submit</div>
+    </form>
+</div>

@@ -10,10 +10,14 @@ import { ActivatedRoute } from '@angular/router';
 export class TaskComponent implements OnInit {
   public task;
 
-  constructor(private taskService: TaskService, private route: ActivatedRoute) { }
+  constructor(private taskService: TaskService, private route: ActivatedRoute) {
+
+   }
 
   ngOnInit() {
     this.getTask(this.route.snapshot.params.id);
+    console.log(this.route.snapshot.params);
+    console.log(this.task);
   }
 
   getTask(id: number){
@@ -22,5 +26,7 @@ export class TaskComponent implements OnInit {
       err => console.log(err)
     );
   }
+
+
 
 }

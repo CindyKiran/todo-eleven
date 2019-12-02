@@ -17,7 +17,7 @@ export class TaskService {
   }
 
   getTask(id: number){
-    return this.http.get('/server/tasks/' + id);
+    return this.http.get('/server/tasks/'+id);
   }
 
   displayAll(){
@@ -26,7 +26,7 @@ export class TaskService {
 
   updateTask(id: number, task){
     let body = JSON.stringify(task);
-    return this.http.put('/server/tasks' + id, body, httpOption );
+    return this.http.put('/server/tasks/'+id, task, httpOption );
   }
 }
 

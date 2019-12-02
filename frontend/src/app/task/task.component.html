@@ -1,7 +1,9 @@
 <div class="main">
-    <h1>{{task.task}}</h1>
-    <div id="task">
-            <h3>Deadline: 2019-12-01</h3>
-            <h4>Status: almost done</h4>
-        </div>
+    <div id="task" style="margin-top:40px">
+        <h1>{{task.task}}</h1>
+        <h3>Deadline: {{task.deadline}}</h3>
+        <h4>Status: {{task.status}}</h4>
+        <p>{{task.description}}</p>
+        <div id="button" [routerLink]= "['/update-form/'+task.id]">Edit</div>
+    </div>
 </div>

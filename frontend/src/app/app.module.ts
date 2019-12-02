@@ -8,18 +8,26 @@ import { NavigationComponent } from './navigation/navigation.component';
 import { TaskComponent } from './task/task.component';
 import { TaskService } from './task.service';
 import { HttpClientModule, HttpHeaders } from '@angular/common/http';
+import { FormComponent } from './form/form.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { UpdateFormComponent } from './update-form/update-form.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     TaskListComponent,
     NavigationComponent,
-    TaskComponent
+    TaskComponent,
+    FormComponent,
+    UpdateFormComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [
     TaskService
