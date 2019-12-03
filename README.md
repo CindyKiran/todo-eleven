@@ -33,7 +33,9 @@ spring.jpa.hibernate.ddl-auto = update
 ### Spring Boot Application (the backend part)
 * Start your IDE (like IntelliJ) 
 * Open/import the main folder of the app (i.e ToDoApp-Eleven)
-* Go to terminal and change current directory to the "backend" folder (i.e. C:\Users\cindy\Documents\Projects\ToDoApp-Eleven>cd C:\Users\cindy\Documents\Projects\ToDoApp-Eleven\backend)
+* Go to terminal and change current directory to the "backend" folder directory, for example:
+
+`cd C:\Users\cindyK\Documents\Projects\ToDoApp-Eleven\backend`
 * Make sure that you have the following dependencies inside your "pom.xml"file: 
 1. spring-boot-starter-web
 2. mysql-connector-java
@@ -45,7 +47,8 @@ Check [maven respository online](https://mvnrepository.com/) to copy and past th
 It should now run successfully
 
 ### Angular application (the frontend part)
-* Go to terminal and change to frontend directory (i.e. C:\Users\cindy\Documents\Projects\ToDoApp-Eleven\frontend)
+* Go to (new) terminal and change to "frontend" folder directory, for example:
+`cd C:\Users\cindyK\Documents\Projects\ToDoApp-Eleven\frontend`
 * Although you should have the same as mine, check if you have set the proxy config correctly:
 1. You should have the "proxy.conf.json" file with "target" set to `http://localhost:8080`
 2. Set the "start" command in "package.json" to `ng serve --proxy-config proxy.conf.json`
