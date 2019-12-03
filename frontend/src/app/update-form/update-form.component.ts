@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { TaskService } from '../service/task.service';
-import { ActivatedRoute } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
 import { Observable } from 'rxjs';
 
@@ -14,15 +14,22 @@ export class UpdateFormComponent implements OnInit {
   taskForm: FormGroup;
   validMessage = ''; //message that will hold error info
 
-  constructor(private taskService:TaskService, private route: ActivatedRoute, private formBuilder:FormBuilder) { }
+  constructor(private taskService:TaskService, private route: ActivatedRoute, private router: Router, private formBuilder:FormBuilder) {}
 
   ngOnInit() {
+    this.taskForm = new FormGroup({
+      task: new FormControl(),
+      description: new FormControl(),
+      deadline: new FormControl(),
+      priority: new FormControl(),
+      status: new FormControl(),
+    })
     this.getTaskAndFillIn(this.route.snapshot.params.id);
   }
 
   getTaskAndFillIn(id: number){
     this.taskService.getTask(id).subscribe(
-      data => { 
+      data => {
         this.task = data;
         this.taskForm = this.formBuilder.group({
           priority: [data["priority"], [Validators.required]],
@@ -41,15 +48,13 @@ export class UpdateFormComponent implements OnInit {
       this.validMessage = "Task successfully updated";
       this.taskService.updateTask(this.route.snapshot.params.id, this.taskForm.value).subscribe(
         data => {
-          this.taskForm.reset();
-          return true;
+          this.router.navigate(['/']);
         },
         error =>{
           return Observable.throw(error);
         }
       );
-      window.history.back();
-    } 
+    }
     else{
       this.validMessage = "Error, form is not complete yet";
     }

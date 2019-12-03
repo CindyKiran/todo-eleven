@@ -37,8 +37,7 @@ export class FormComponent implements OnInit {
           return Observable.throw(error);
         }
       );
-      window.history.back();
-    } 
+    }
     else{
       this.validMessage = "Error, form is not complete yet";
     }

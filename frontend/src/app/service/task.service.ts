@@ -3,8 +3,8 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 /**
- * 
- * @author 
+ *
+ * @author
  */
 @Injectable({
   providedIn: 'root'
@@ -12,10 +12,10 @@ import { Observable } from 'rxjs';
 export class TaskService {
 
   constructor(private http: HttpClient) {}
-  
+
   // methods to send http request to backend server
   addTask(task){
-    let body = JSON.stringify(task); 
+    let body = JSON.stringify(task);
     return this.http.post('/server/tasks', body, httpOption);
   }
 
@@ -32,14 +32,18 @@ export class TaskService {
     return this.http.put('/server/tasks/'+id, task, httpOption );
   }
 
+  deleteTask(id: number){
+    return this.http.delete('/server/tasks/'+id, httpOption);
+  }
+
   /**
    * Checks the boolean value of task and prints a string representation of the value
-   * 
+   *
    * @param status {boolean} - Task status
    * @returns string
    */
   isCheckedValue(status: boolean): string {
-    return status ? 'Done' : 'Not Done'; 
+    return status ? 'Done' : 'Not Done';
   }
 
 }

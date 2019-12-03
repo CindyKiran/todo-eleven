@@ -18,7 +18,7 @@ export class TaskComponent implements OnInit {
 
   ngOnInit() {
     this.getTask(this.route.snapshot.params.id);
-    //console.log(this.route.snapshot.params.id);
+    console.log(this.route.snapshot.params.id);
   }
 
   getTask(id: number){
@@ -37,4 +37,8 @@ export class TaskComponent implements OnInit {
     return this.taskService.isCheckedValue(status);
   }
 
+  deleteTask(){
+    console.log(this.route.snapshot.params.id);
+    this.taskService.deleteTask(this.route.snapshot.params.id).subscribe();
+  }
 }
