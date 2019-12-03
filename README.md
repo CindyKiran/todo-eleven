@@ -52,9 +52,15 @@ That is the main page: localhost:4200.
 ## Create new task
 * On the left side of the webpage you see the button "+ New Task", click on it and it will bring you to a online form
 * In order to submit successfully, you must fill all the fields in
+* On field "priority", fill a number from 1 to 5 with 5 as highest and 1 as lowest
 * Click on submit to create a new task
 * Go back to the main menu, and you shall see your newly created task
 ## Edit a existing task
 * Go the the task list on the main page, and click on the specific task you want to update
 * Click below on the button *Edit*; it redirects you to a update form with all the previous data filled in. 
 * Change the necessary fields you want to edit and click on *submit*
+## Delete existing task
+* Go the the task list on the main page, and click on the specific task you want to update
+* Click below on button *Delete*
+* And your done! 
+
