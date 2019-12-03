@@ -6,7 +6,7 @@
     "published": null,
     "deadline": "2019-11-29T00:00:00.000+0000",
     "priority": 5,
-    "status": "Done"
+    "status": "true"
   },
   {
     "id": 2,
@@ -15,7 +15,7 @@
     "published": null,
     "deadline": "2019-12-02T00:00:00.000+0000",
     "priority": 5,
-    "status": "Done"
+    "status": "true"
   },
   {
     "id": 4,
@@ -24,7 +24,7 @@
     "published": null,
     "deadline": "2019-12-01T00:00:00.000+0000",
     "priority": 5,
-    "status": "Problems with undefined task"
+    "status": "true"
   },
   {
     "id": 5,
@@ -33,7 +33,7 @@
     "published": null,
     "deadline": "2019-12-02T00:00:00.000+0000",
     "priority": 4,
-    "status": "Bug fixed"
+    "status": "true"
   },
   {
     "id": 6,
@@ -42,7 +42,7 @@
     "published": null,
     "deadline": "2019-12-03T00:00:00.000+0000",
     "priority": 3,
-    "status": "Not started yet"
+    "status": "false"
   },
   {
     "id": 7,
@@ -51,7 +51,7 @@
     "published": null,
     "deadline": "2019-12-03T00:00:00.000+0000",
     "priority": 5,
-    "status": "Have not started yet"
+    "status": "false"
   },
   {
     "id": 8,
@@ -60,6 +60,6 @@
     "published": null,
     "deadline": "2019-12-03T00:00:00.000+0000",
     "priority": 5,
-    "status": "Have not started yet"
+    "status": "true"
   }
 ]

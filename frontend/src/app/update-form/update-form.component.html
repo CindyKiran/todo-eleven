@@ -1,4 +1,6 @@
 <div class="main">
+  <ng-template [ngIf]="task">
+
     <h1>{{task.task}}</h1>
     <form [formGroup]="taskForm">
         <div *ngIf="validMessage != ''">
@@ -10,15 +12,14 @@
         <label>When is the deadline?</label>
         <input type="date" formControlName="deadline"       value="{{task.deadline | date : 'yyyy-MM-dd'}}"/>
         <input type="text"  formControlName="priority"      value="{{task.priority}}"/>
-        <div>
-                <label>Status:</label>
-                <input type="radio" formControlName="status" value="false" checked>Not Done<br>
-                <input type="radio" formControlName="status" value="true">Done<br>
-        </div>
+        <label>Status:</label>
+        <input type="radio" id="checkbox" formControlName="status" value="false" checked>Not Done<br>
+        <input type="radio" id="checkbox" formControlName="status" value="true">Done<br><br>
 
         <a href="" (click)="goBack()">
                 <div id="button">Back</div>
         </a>
         <div id="button" (click)="resubmitTask()">Submit</div>
     </form>
+  </ng-template>
 </div>

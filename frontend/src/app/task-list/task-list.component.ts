@@ -9,6 +9,7 @@ import { TaskService } from '../service/task.service';
 export class TaskListComponent implements OnInit {
   private loaded: boolean = false;
   public tasks;
+  public currentDate = new Date();
 
   constructor(private taskService: TaskService) { }
 
@@ -18,11 +19,11 @@ export class TaskListComponent implements OnInit {
 
   getTasks(){
     this.taskService.displayAll().subscribe(
-      data => { 
+      data => {
         this.tasks = data;
         this.loaded = true;
-        console.log(data); 
-      },
+        this.currentDate = new Date();
+              },
       err => console.log(err)
     );
   }
@@ -30,5 +31,7 @@ export class TaskListComponent implements OnInit {
   isCheckedValue(status: boolean): string {
     return this.taskService.isCheckedValue(status);
   }
+
+
 
 }
