@@ -9,8 +9,13 @@
         <input type="text" formControlName="description"    placeholder="Description"  required/>
         <label>When is the deadline?</label>
         <input type="date" formControlName="deadline"       placeholder="Deadline" required/>
-        <input type="text"  formControlName="priority"         placeholder="Priority" required/>
-        <input type="text"  formControlName="status"         placeholder="Status" required/><br>
+        <input type="text"  formControlName="priority"         placeholder="Priority" required/><br>
+        <div>
+            <label>Status:</label>
+            <input type="radio" formControlName="status" value="false" checked>Not Done<br>
+            <input type="radio" formControlName="status" value="true">Done<br>
+        </div>
+
         
         <a href="" (click)="goBack()">
                 <div id="button">Back</div>

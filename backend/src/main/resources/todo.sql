@@ -5,6 +5,6 @@ CREATE TABLE taskList(
     publishDate DATE,
     deadline DATE,
     priority INT,
-    status VARCHAR(255)
+    status BOOL,
     PRIMARY KEY(id)
 )

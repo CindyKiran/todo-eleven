@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { TaskService } from '../task.service';
+import { TaskService } from '../service/task.service';
 import { ActivatedRoute } from '@angular/router';
 import { Task } from '../Task';
 
@@ -9,6 +9,7 @@ import { Task } from '../Task';
   styleUrls: ['./task.component.scss']
 })
 export class TaskComponent implements OnInit {
+  private loaded: boolean = false;
   public task: any;
 
   constructor(private taskService: TaskService, private route: ActivatedRoute) {
@@ -26,11 +27,14 @@ export class TaskComponent implements OnInit {
       data => {
         //console.log(data);
         this.task = data;
+        this.loaded = true;
       },
       err => console.log(err)
     );
   }
 
-
+  isCheckedValue(status: boolean): string {
+    return this.taskService.isCheckedValue(status);
+  }
 
 }

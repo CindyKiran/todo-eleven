@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
-import { TaskService } from '../task.service';
+import { TaskService } from '../service/task.service';
 import { Observable } from 'rxjs';
 
 
@@ -36,7 +36,8 @@ export class FormComponent implements OnInit {
         error =>{
           return Observable.throw(error);
         }
-      )
+      );
+      window.history.back();
     } 
     else{
       this.validMessage = "Error, form is not complete yet";

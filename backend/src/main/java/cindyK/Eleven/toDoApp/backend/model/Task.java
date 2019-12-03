@@ -6,16 +6,22 @@ import java.util.Date;
 @Entity
 @Table(name = "tasks")
 public class Task {
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    private String task;
-    private String description;
-    private Date published;
     private Date deadline;
+
+    private String description;
+
     private int priority;
-    private String status;
+
+    private Date published;
+
+    private boolean status;
+
+    private String task;
 
     public Long getId() {
         return id;
@@ -65,11 +71,11 @@ public class Task {
         this.priority = priority;
     }
 
-    public String getStatus() {
+    public boolean isStatus() {
         return status;
     }
 
-    public void setStatus(String status) {
+    public void setStatus(boolean status) {
         this.status = status;
     }
 }

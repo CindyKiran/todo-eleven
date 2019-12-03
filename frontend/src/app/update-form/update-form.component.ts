@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { TaskService } from '../task.service';
+import { TaskService } from '../service/task.service';
 import { ActivatedRoute } from '@angular/router';
 import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
 import { Observable } from 'rxjs';
@@ -18,15 +18,6 @@ export class UpdateFormComponent implements OnInit {
 
   ngOnInit() {
     this.getTaskAndFillIn(this.route.snapshot.params.id);
-
-    // this.taskForm = new FormGroup({
-    //   task: new FormControl('', Validators.required),
-    //   description: new FormControl('', Validators.required),
-    //   deadline: new FormControl('', Validators.required),
-    //   priority: new FormControl('', Validators.required),
-    //   status: new FormControl('', Validators.required)
-    // });
-
   }
 
   getTaskAndFillIn(id: number){
@@ -56,7 +47,8 @@ export class UpdateFormComponent implements OnInit {
         error =>{
           return Observable.throw(error);
         }
-      )
+      );
+      window.history.back();
     } 
     else{
       this.validMessage = "Error, form is not complete yet";

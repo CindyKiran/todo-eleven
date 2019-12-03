@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { TaskService } from '../task.service';
+import { TaskService } from '../service/task.service';
 
 @Component({
   selector: 'app-task-list',
@@ -7,6 +7,7 @@ import { TaskService } from '../task.service';
   styleUrls: ['./task-list.component.scss']
 })
 export class TaskListComponent implements OnInit {
+  private loaded: boolean = false;
   public tasks;
 
   constructor(private taskService: TaskService) { }
@@ -17,9 +18,17 @@ export class TaskListComponent implements OnInit {
 
   getTasks(){
     this.taskService.displayAll().subscribe(
-      data => { this.tasks = data },
+      data => { 
+        this.tasks = data;
+        this.loaded = true;
+        console.log(data); 
+      },
       err => console.log(err)
     );
+  }
+
+  isCheckedValue(status: boolean): string {
+    return this.taskService.isCheckedValue(status);
   }
 
 }

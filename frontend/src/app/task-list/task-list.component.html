@@ -1,11 +1,16 @@
 <div class="main">
-    <h1>Task List</h1>
-    <div id="task" *ngFor="let task of tasks">
-        <a [routerLink] = "['/tasks/'+task.id]">
-            <h2>{{task.task}}</h2>
-            <h3>Deadline: {{task.deadline | date : 'yyyy-MM-dd'}}</h3>
-            <h4>Status: {{task.status}}</h4>
-        </a>
-    </div>
+    <div class="loading" *ngIf="!loaded">Loading</div>
+    
+    <ng-template [ngIf]="tasks" >
+            <h1>Task List</h1>
+            <div id="task" *ngFor="let task of tasks">
+        
+                <a [routerLink] = "['/tasks/'+task.id]">
+                    <h2>{{task.task}}</h2>
+                    <h3>Deadline: {{task.deadline | date : 'yyyy-MM-dd'}}</h3>
+                    <h4 id="status">Status: {{isCheckedValue(task.status)}}</h4>
+                </a>
+            </div>
+    </ng-template>
 </div>
 

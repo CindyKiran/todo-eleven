@@ -10,7 +10,11 @@
         <label>When is the deadline?</label>
         <input type="date" formControlName="deadline"       value="{{task.deadline | date : 'yyyy-MM-dd'}}"/>
         <input type="text"  formControlName="priority"      value="{{task.priority}}"/>
-        <input type="text"  formControlName="status"        value="{{task.status}}"/><br>
+        <div>
+                <label>Status:</label>
+                <input type="radio" formControlName="status" value="false" checked>Not Done<br>
+                <input type="radio" formControlName="status" value="true">Done<br>
+        </div>
 
         <a href="" (click)="goBack()">
                 <div id="button">Back</div>
