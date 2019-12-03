@@ -1,6 +1,11 @@
 # To Do Application Eleven
-For their job application procedure I had to build a "to do web app" with Java as backend language.
-For this project I've chosen for Angular as frontend, backed up by MySql server
+For their job application procedure I had to build a *To Do web app* with Java as backend language and should be able to:
+* display all created tasks
+* create a new task
+* update existing task, including the status if task is done or not
+* deleting a task
+
+For this project I've chosen for Angular as frontend, backed up by MySql server.
 
 ## Requirements
 To run this app you need:
@@ -13,7 +18,7 @@ To run this app you need:
     `create database todo`
 * Open this database with command: `use todo;`
 * Create a new table in this database with: `create table tasks`
-* Make sure you have the same "application.properties" (inside resources folder)
+* Make sure you have the same "application.properties" (inside *resources* folder of backend folder)
  ```` 
 spring.datasource.url=jdbc:mysql://localhost/todo
 spring.datasource.username=root
@@ -26,6 +31,7 @@ spring.jpa.hibernate.ddl-auto = update
 
 ## How to run it
 ### Spring Boot Application (the backend part)
+* Start your IDE (like IntelliJ) 
 * Open/import the main folder of the app (i.e ToDoApp-Eleven)
 * Go to terminal and change current directory to the "backend" folder (i.e. C:\Users\cindy\Documents\Projects\ToDoApp-Eleven>cd C:\Users\cindy\Documents\Projects\ToDoApp-Eleven\backend)
 * Make sure that you have the following dependencies inside your "pom.xml"file: 
@@ -33,7 +39,8 @@ spring.jpa.hibernate.ddl-auto = update
 2. mysql-connector-java
 3. spring-boot-starter-data-jpa
 4. h2
-(check maven respository online to copy and past the code)
+
+Check [maven respository online](https://mvnrepository.com/) to copy and past the valid depenency code
 * To start, type the following command: `mvn spring-boot:run`
 It should now run successfully
 
@@ -48,7 +55,7 @@ Go check the outcome at: localhost:4200
 
 # How to use it: User Manual
 ## See all created task list
-That is the main page: localhost:4200. 
+The list of all created tasks can be found at the main page: localhost:4200. 
 ## Create new task
 * On the left side of the webpage you see the button "+ New Task", click on it and it will bring you to a online form
 * In order to submit successfully, you must fill all the fields in
