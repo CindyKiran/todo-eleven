@@ -15,9 +15,9 @@ To run this app you need:
 
 ## Database setup
 * Create new database with the name "todo" by typing in the MySQL command:
-    `create database todo`
+    `create database todo;`
 * Open this database with command: `use todo;`
-* Create a new table in this database with: `create table tasks`
+* Create a new table in this database with: `create table tasks;`
 * Make sure you have the same "application.properties" (inside *resources* folder of backend folder)
  ```` 
 spring.datasource.url=jdbc:mysql://localhost/todo
@@ -48,6 +48,7 @@ It should now run successfully
 
 ### Angular application (the frontend part)
 * Go to (new) terminal and change to "frontend" folder directory, for example:
+
 `cd C:\Users\cindyK\Documents\Projects\ToDoApp-Eleven\frontend`
 * Although you should have the same as mine, check if you have set the proxy config correctly:
 1. You should have the "proxy.conf.json" file with "target" set to `http://localhost:8080`
